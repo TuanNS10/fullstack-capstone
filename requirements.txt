@@ -23,3 +23,4 @@ cryptography==41.0.5
 requests==2.31.0
 gunicorn==20.1.0
 python-dotenv==0.21.1
+psycopg2==2.9.9
