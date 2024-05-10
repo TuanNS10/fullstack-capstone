@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from sqlalchemy import ForeignKey, Column, String, Integer, Date
 from sqlalchemy.orm import relationship
 from flask_sqlalchemy import SQLAlchemy
-import json
 
 
 load_dotenv()
@@ -39,24 +38,6 @@ db_drop_and_create_all()
 def db_drop_and_create_all():
     db.drop_all()
     db.create_all()
-    db_init_records()
-    
-def db_init_records():
-    '''this will initialize the database with some test records.'''
-
-    new_actor = (Actor(
-        name = 'Sanh Tuan',
-        gender = 'Male',
-        age = 25
-        ))
-
-    new_movie = (Movie(
-        title = 'Happy ending',
-        release_date = date.today()
-        ))
-
-    new_actor.insert()
-    new_movie.insert()
     
 #----------------------------------------------------------------------------#
 # Actors Model 
